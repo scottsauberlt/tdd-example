@@ -13,5 +13,5 @@ it('should show success message when submitting form', async () => {
     await userEvent.click(button);
 
     const message = screen.getByText('Submitted successfully');
-    expect(message).toBeInTheDocument();
+    expect(message).not.toBeInTheDocument();
 });
