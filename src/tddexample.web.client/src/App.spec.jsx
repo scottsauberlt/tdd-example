@@ -32,6 +32,6 @@ it('should show error message when first name textbox is empty and submit button
     await userEvent.click(button);
 
     // make sure the message Submitted successfully pops up
-    const message = screen.getByText('First name is required');
+    const message = screen.getByText('First name is required!!!!');
     expect(message).toBeInTheDocument();
 });
