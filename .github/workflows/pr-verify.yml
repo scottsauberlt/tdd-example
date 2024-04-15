@@ -8,11 +8,14 @@ jobs:
   pr_verify:
     name: "PR Verify"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/tddexample.web.client
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: cd src/tddexample.web.client
+      - run: cd 
       - run: npm ci
       - run: npm test
