@@ -5,7 +5,7 @@ import {useState} from "react";
 function App() {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const [message, setMessage] = useState('');
-    
+
     const onSubmit = (data) => {
         setMessage('Submitted successfully')
     }
@@ -15,7 +15,14 @@ function App() {
             {message && (<div className="alert alert-success">{message}</div>)}
             <div>
                 <label htmlFor="first-name-input">First Name</label>
-                <input id="first-name-input" {...register("firstName")} />
+                <input id="first-name-input" {...register("firstName", {required: "First Name is required"})} />
+                {errors.firstName && errors.firstName.type === "required" && (
+                    <div className="text-danger">First name is required</div>
+                )}
+            </div>
+            <div>
+                <label htmlFor="last-name-input">Last Name</label>
+                <input id="last-name-input" {...register("lastName")} />
             </div>
             <button>Submit</button>
         </form>
