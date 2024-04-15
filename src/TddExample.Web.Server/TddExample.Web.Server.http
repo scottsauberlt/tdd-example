@@ -1,0 +1,6 @@
+@TddExample.Web.Server_HostAddress = http://localhost:5109
+
+GET {{TddExample.Web.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
